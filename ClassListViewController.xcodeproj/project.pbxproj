@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A270BB9E1D2278E50030DB0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BB9D1D2278E50030DB0A /* main.m */; };
+		A270BBA11D2278E50030DB0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BBA01D2278E50030DB0A /* AppDelegate.m */; };
+		A270BBA41D2278E50030DB0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BBA31D2278E50030DB0A /* ViewController.m */; };
+		A270BBA71D2278E50030DB0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A270BBA51D2278E50030DB0A /* Main.storyboard */; };
+		A270BBA91D2278E50030DB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A270BBA81D2278E50030DB0A /* Assets.xcassets */; };
+		A270BBAC1D2278E50030DB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A270BBAA1D2278E50030DB0A /* LaunchScreen.storyboard */; };
+		A270BBB71D2278E50030DB0A /* ClassListViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BBB61D2278E50030DB0A /* ClassListViewControllerTests.m */; };
+		A270BBC21D2278E50030DB0A /* ClassListViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BBC11D2278E50030DB0A /* ClassListViewControllerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A270BBB31D2278E50030DB0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A270BB911D2278E50030DB0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A270BB981D2278E50030DB0A;
+			remoteInfo = ClassListViewController;
+		};
+		A270BBBE1D2278E50030DB0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A270BB911D2278E50030DB0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A270BB981D2278E50030DB0A;
+			remoteInfo = ClassListViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A270BB991D2278E50030DB0A /* ClassListViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassListViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A270BB9D1D2278E50030DB0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A270BB9F1D2278E50030DB0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A270BBA01D2278E50030DB0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A270BBA21D2278E50030DB0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A270BBA31D2278E50030DB0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A270BBA61D2278E50030DB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A270BBA81D2278E50030DB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A270BBAB1D2278E50030DB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A270BBAD1D2278E50030DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A270BBB21D2278E50030DB0A /* ClassListViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassListViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A270BBB61D2278E50030DB0A /* ClassListViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassListViewControllerTests.m; sourceTree = "<group>"; };
+		A270BBB81D2278E50030DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A270BBBD1D2278E50030DB0A /* ClassListViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassListViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A270BBC11D2278E50030DB0A /* ClassListViewControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassListViewControllerUITests.m; sourceTree = "<group>"; };
+		A270BBC31D2278E50030DB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A270BB961D2278E50030DB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBAF1D2278E50030DB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBBA1D2278E50030DB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A270BB901D2278E50030DB0A = {
+			isa = PBXGroup;
+			children = (
+				A270BB9B1D2278E50030DB0A /* ClassListViewController */,
+				A270BBB51D2278E50030DB0A /* ClassListViewControllerTests */,
+				A270BBC01D2278E50030DB0A /* ClassListViewControllerUITests */,
+				A270BB9A1D2278E50030DB0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A270BB9A1D2278E50030DB0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A270BB991D2278E50030DB0A /* ClassListViewController.app */,
+				A270BBB21D2278E50030DB0A /* ClassListViewControllerTests.xctest */,
+				A270BBBD1D2278E50030DB0A /* ClassListViewControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A270BB9B1D2278E50030DB0A /* ClassListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A270BB9F1D2278E50030DB0A /* AppDelegate.h */,
+				A270BBA01D2278E50030DB0A /* AppDelegate.m */,
+				A270BBA21D2278E50030DB0A /* ViewController.h */,
+				A270BBA31D2278E50030DB0A /* ViewController.m */,
+				A270BBA51D2278E50030DB0A /* Main.storyboard */,
+				A270BBA81D2278E50030DB0A /* Assets.xcassets */,
+				A270BBAA1D2278E50030DB0A /* LaunchScreen.storyboard */,
+				A270BBAD1D2278E50030DB0A /* Info.plist */,
+				A270BB9C1D2278E50030DB0A /* Supporting Files */,
+			);
+			path = ClassListViewController;
+			sourceTree = "<group>";
+		};
+		A270BB9C1D2278E50030DB0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A270BB9D1D2278E50030DB0A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A270BBB51D2278E50030DB0A /* ClassListViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A270BBB61D2278E50030DB0A /* ClassListViewControllerTests.m */,
+				A270BBB81D2278E50030DB0A /* Info.plist */,
+			);
+			path = ClassListViewControllerTests;
+			sourceTree = "<group>";
+		};
+		A270BBC01D2278E50030DB0A /* ClassListViewControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A270BBC11D2278E50030DB0A /* ClassListViewControllerUITests.m */,
+				A270BBC31D2278E50030DB0A /* Info.plist */,
+			);
+			path = ClassListViewControllerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A270BB981D2278E50030DB0A /* ClassListViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A270BBC61D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewController" */;
+			buildPhases = (
+				A270BB951D2278E50030DB0A /* Sources */,
+				A270BB961D2278E50030DB0A /* Frameworks */,
+				A270BB971D2278E50030DB0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClassListViewController;
+			productName = ClassListViewController;
+			productReference = A270BB991D2278E50030DB0A /* ClassListViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A270BBB11D2278E50030DB0A /* ClassListViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A270BBC91D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerTests" */;
+			buildPhases = (
+				A270BBAE1D2278E50030DB0A /* Sources */,
+				A270BBAF1D2278E50030DB0A /* Frameworks */,
+				A270BBB01D2278E50030DB0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A270BBB41D2278E50030DB0A /* PBXTargetDependency */,
+			);
+			name = ClassListViewControllerTests;
+			productName = ClassListViewControllerTests;
+			productReference = A270BBB21D2278E50030DB0A /* ClassListViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A270BBBC1D2278E50030DB0A /* ClassListViewControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A270BBCC1D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerUITests" */;
+			buildPhases = (
+				A270BBB91D2278E50030DB0A /* Sources */,
+				A270BBBA1D2278E50030DB0A /* Frameworks */,
+				A270BBBB1D2278E50030DB0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A270BBBF1D2278E50030DB0A /* PBXTargetDependency */,
+			);
+			name = ClassListViewControllerUITests;
+			productName = ClassListViewControllerUITests;
+			productReference = A270BBBD1D2278E50030DB0A /* ClassListViewControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A270BB911D2278E50030DB0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = dongjiangpeng;
+				TargetAttributes = {
+					A270BB981D2278E50030DB0A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A270BBB11D2278E50030DB0A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A270BB981D2278E50030DB0A;
+					};
+					A270BBBC1D2278E50030DB0A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A270BB981D2278E50030DB0A;
+					};
+				};
+			};
+			buildConfigurationList = A270BB941D2278E50030DB0A /* Build configuration list for PBXProject "ClassListViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A270BB901D2278E50030DB0A;
+			productRefGroup = A270BB9A1D2278E50030DB0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A270BB981D2278E50030DB0A /* ClassListViewController */,
+				A270BBB11D2278E50030DB0A /* ClassListViewControllerTests */,
+				A270BBBC1D2278E50030DB0A /* ClassListViewControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A270BB971D2278E50030DB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A270BBAC1D2278E50030DB0A /* LaunchScreen.storyboard in Resources */,
+				A270BBA91D2278E50030DB0A /* Assets.xcassets in Resources */,
+				A270BBA71D2278E50030DB0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBB01D2278E50030DB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBBB1D2278E50030DB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A270BB951D2278E50030DB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A270BBA41D2278E50030DB0A /* ViewController.m in Sources */,
+				A270BBA11D2278E50030DB0A /* AppDelegate.m in Sources */,
+				A270BB9E1D2278E50030DB0A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBAE1D2278E50030DB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A270BBB71D2278E50030DB0A /* ClassListViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A270BBB91D2278E50030DB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A270BBC21D2278E50030DB0A /* ClassListViewControllerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A270BBB41D2278E50030DB0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A270BB981D2278E50030DB0A /* ClassListViewController */;
+			targetProxy = A270BBB31D2278E50030DB0A /* PBXContainerItemProxy */;
+		};
+		A270BBBF1D2278E50030DB0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A270BB981D2278E50030DB0A /* ClassListViewController */;
+			targetProxy = A270BBBE1D2278E50030DB0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A270BBA51D2278E50030DB0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A270BBA61D2278E50030DB0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A270BBAA1D2278E50030DB0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A270BBAB1D2278E50030DB0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A270BBC41D2278E50030DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A270BBC51D2278E50030DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A270BBC71D2278E50030DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ClassListViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A270BBC81D2278E50030DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ClassListViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A270BBCA1D2278E50030DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ClassListViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassListViewController.app/ClassListViewController";
+			};
+			name = Debug;
+		};
+		A270BBCB1D2278E50030DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ClassListViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassListViewController.app/ClassListViewController";
+			};
+			name = Release;
+		};
+		A270BBCD1D2278E50030DB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ClassListViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ClassListViewController;
+			};
+			name = Debug;
+		};
+		A270BBCE1D2278E50030DB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ClassListViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dong.ClassListViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ClassListViewController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A270BB941D2278E50030DB0A /* Build configuration list for PBXProject "ClassListViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A270BBC41D2278E50030DB0A /* Debug */,
+				A270BBC51D2278E50030DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A270BBC61D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A270BBC71D2278E50030DB0A /* Debug */,
+				A270BBC81D2278E50030DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A270BBC91D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A270BBCA1D2278E50030DB0A /* Debug */,
+				A270BBCB1D2278E50030DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A270BBCC1D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A270BBCD1D2278E50030DB0A /* Debug */,
+				A270BBCE1D2278E50030DB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A270BB911D2278E50030DB0A /* Project object */;
+}
