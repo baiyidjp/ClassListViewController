@@ -45,6 +45,7 @@
 		A270BC281D227C340030DB0A /* UIView+XL.m in Sources */ = {isa = PBXBuildFile; fileRef = A270BC271D227C340030DB0A /* UIView+XL.m */; };
 		A270BC2B1D227C710030DB0A /* guanbi_hui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A270BC291D227C710030DB0A /* guanbi_hui@2x.png */; };
 		A270BC2C1D227C710030DB0A /* guanbi_hui@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A270BC2A1D227C710030DB0A /* guanbi_hui@3x.png */; };
+		F58AA44C1D27AD3200F21A90 /* ListClassFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F58AA44B1D27AD3200F21A90 /* ListClassFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		A270BC271D227C340030DB0A /* UIView+XL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XL.m"; sourceTree = "<group>"; };
 		A270BC291D227C710030DB0A /* guanbi_hui@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi_hui@2x.png"; sourceTree = "<group>"; };
 		A270BC2A1D227C710030DB0A /* guanbi_hui@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi_hui@3x.png"; sourceTree = "<group>"; };
+		F58AA44A1D27AD3200F21A90 /* ListClassFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListClassFlowLayout.h; sourceTree = "<group>"; };
+		F58AA44B1D27AD3200F21A90 /* ListClassFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListClassFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 				A270BBD11D2279230030DB0A /* ListClassModel.m */,
 				A270BBD21D2279230030DB0A /* ListClassView.h */,
 				A270BBD31D2279230030DB0A /* ListClassView.m */,
+				F58AA44A1D27AD3200F21A90 /* ListClassFlowLayout.h */,
+				F58AA44B1D27AD3200F21A90 /* ListClassFlowLayout.m */,
 			);
 			path = classView;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58AA44C1D27AD3200F21A90 /* ListClassFlowLayout.m in Sources */,
 				A270BC131D227A230030DB0A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A270BC1E1D227A230030DB0A /* NSObject+MJKeyValue.m in Sources */,
 				A270BBA41D2278E50030DB0A /* ViewController.m in Sources */,
@@ -710,6 +716,7 @@
 				A270BBC81D2278E50030DB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A270BBC91D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +725,7 @@
 				A270BBCB1D2278E50030DB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A270BBCC1D2278E50030DB0A /* Build configuration list for PBXNativeTarget "ClassListViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -726,6 +734,7 @@
 				A270BBCE1D2278E50030DB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
