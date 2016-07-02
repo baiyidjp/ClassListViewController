@@ -11,6 +11,7 @@
 #import "ListClassView.h"
 #import "MJExtension.h"
 #import "UIView+XL.h"
+#import "ListClassBtnView.h"
 
 @interface ViewController ()
 @property(nonatomic,strong)NSMutableArray *classListArray;
@@ -19,6 +20,7 @@
 @implementation ViewController
 {
     ListClassView *listclassView;
+    ListClassBtnView *listClassBtnView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,28 +68,45 @@
             }
             [_classListArray addObject:dict];
         }
-        _classListArray = [ListClassModel mj_objectArrayWithKeyValuesArray:[_classListArray copy]];
+//        _classListArray = [ListClassModel mj_objectArrayWithKeyValuesArray:[_classListArray copy]];
     }
     return _classListArray;
 }
 - (IBAction)click:(id)sender {
     
-    listclassView = [ListClassView getListClassViewWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
+//    listclassView = [ListClassView getListClassViewWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
+//        [UIView animateWithDuration:0.3 animations:^{
+//            listclassView.y = -KHEIGHT;
+//        } completion:^(BOOL finished) {
+//            listclassView = nil;
+//            [listclassView removeFromSuperview];
+//            //在此处重新请求并刷新数据
+//        }];
+//        NSLog(@"%@",classId);
+//    }];
+//    [UIView animateWithDuration:0.3 animations:^{
+//        listclassView.y = 0;
+//    }];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
+//    [window addSubview:listclassView];
+    
+    listClassBtnView = [ListClassBtnView getListClassBtnViewwWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
         [UIView animateWithDuration:0.3 animations:^{
-            listclassView.y = -KHEIGHT;
+            listClassBtnView.y = -KHEIGHT;
         } completion:^(BOOL finished) {
-            listclassView = nil;
-            [listclassView removeFromSuperview];
+            listClassBtnView = nil;
+            [listClassBtnView removeFromSuperview];
             //在此处重新请求并刷新数据
         }];
         NSLog(@"%@",classId);
     }];
     [UIView animateWithDuration:0.3 animations:^{
-        listclassView.y = 0;
+        listClassBtnView.y = 0;
     }];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
-    [window addSubview:listclassView];
+    [window addSubview:listClassBtnView];
 
 }
 
