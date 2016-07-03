@@ -13,7 +13,7 @@
 #import "UIView+XL.h"
 #import "ListClassBtnView.h"
 
-@interface ViewController ()
+@interface ViewController ()<ListClassBtnViewDelegate>
 @property(nonatomic,strong)NSMutableArray *classListArray;
 /** button */
 @property(nonatomic,strong)NSMutableArray *classBtnArray;
@@ -37,28 +37,28 @@
         for (int i = 0; i<7; i++) {
             NSDictionary *dic = @{@"className":[NSString stringWithFormat:@"大类_%d",i],
                                   @"classId":[NSString stringWithFormat:@"%d",i],
-                                  @"classAtt":@[@{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                  @"classAtt":@[@{@"className":[NSString stringWithFormat:@"商品小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
                                                 @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
-                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                @{@"className":[NSString stringWithFormat:@"下商品小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
                                                 @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
-                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                @{@"className":[NSString stringWithFormat:@"小类蕾蕾_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
                                                 @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
-                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
-                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
-                                                  },
-                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                @{@"className":[NSString stringWithFormat:@"小小小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   }
                                                 ]
@@ -68,19 +68,19 @@
                 dict[@"classAtt"] = @[@{@"className":[NSString stringWithFormat:@"小类leilei_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
-                                      @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                      @{@"className":[NSString stringWithFormat:@"小____类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
                                       @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
-                                      @{@"className":[NSString stringWithFormat:@"小类leilei_%d%d",i,i],
+                                      @{@"className":[NSString stringWithFormat:@"小哈哈哈类leilei_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
                                       @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
-                                      @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                      @{@"className":[NSString stringWithFormat:@"小金黄色的类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
                                       @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
@@ -130,7 +130,14 @@
 }
 - (IBAction)clickButton:(id)sender {
     
-    listClassBtnView = [ListClassBtnView getListClassBtnViewwWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classBtnArray chooseBlock:^(NSString *classId) {
+    listClassBtnView = [[ListClassBtnView alloc]initWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT)];
+    listClassBtnView.listClassDelegate = self;
+    listClassBtnView.data = self.classBtnArray;
+
+    [UIView animateWithDuration:0.3 animations:^{
+        listClassBtnView.y = 0;
+    }];
+    [listClassBtnView setChooseBlock:^(NSString *classId) {
         [UIView animateWithDuration:0.3 animations:^{
             listClassBtnView.y = -KHEIGHT;
         } completion:^(BOOL finished) {
@@ -140,17 +147,31 @@
         }];
         NSLog(@"%@",classId);
     }];
-    [UIView animateWithDuration:0.3 animations:^{
-        listClassBtnView.y = 0;
-    }];
+    
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
     [window addSubview:listClassBtnView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark ListClassBtnViewDelegate
+- (CGFloat)columnMarginInListClassBtnView:(ListClassBtnView *)ListClassBtnView{
+    return 10;
 }
+
+- (CGFloat)rowMarginInListClassBtnView:(ListClassBtnView *)ListClassBtnView{
+    return 20;
+}
+
+- (UIEdgeInsets)edgeInsetsInListClassBtnView:(ListClassBtnView *)ListClassBtnView{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (CGFloat)scrollPaddingInListClassBtnView:(ListClassBtnView *)ListClassBtnView{
+    return 50;
+}
+- (CGFloat)headerHeightInListClassBtnView:(ListClassBtnView *)ListClassBtnView{
+    return 50;
+}
+
 
 @end

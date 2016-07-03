@@ -40,7 +40,7 @@
 - (CGFloat)columnMargin{
     
     if (!_columnMargin) {
-        if ([self.delegate respondsToSelector:@selector(columnMarginInListClassFlowLayout::)]) {
+        if ([self.delegate respondsToSelector:@selector(columnMarginInListClassFlowLayout:)]) {
             _columnMargin = [self.delegate columnMarginInListClassFlowLayout:self];
         }else{
             _columnMargin = 10;
@@ -52,7 +52,7 @@
 - (CGFloat)rowMargin{
     
     if (!_rowMargin) {
-        if ([self.delegate respondsToSelector:@selector(rowMarginInListClassFlowLayoutt::)]) {
+        if ([self.delegate respondsToSelector:@selector(rowMarginInListClassFlowLayoutt:)]) {
             _rowMargin = [self.delegate rowMarginInListClassFlowLayoutt:self];
         }else{
             _rowMargin = 10	;
@@ -64,7 +64,7 @@
 - (UIEdgeInsets)edgeInsets{
     
     
-    if ([self.delegate respondsToSelector:@selector(edgeInsetsInListClassFlowLayout::)]) {
+    if ([self.delegate respondsToSelector:@selector(edgeInsetsInListClassFlowLayout:)]) {
         return [self.delegate edgeInsetsInListClassFlowLayout:self];
     }else{
         return UIEdgeInsetsMake(10, 10, 10, 10);

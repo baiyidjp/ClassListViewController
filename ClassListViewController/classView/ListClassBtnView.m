@@ -18,25 +18,33 @@
 @property(nonatomic,assign) CGFloat classViewY;
 /** 存放所有小分类的 */
 @property(nonatomic,strong)NSMutableArray *classBtnDicts;
+/** 列间距 */
+@property(nonatomic,assign) CGFloat columnMargin;
+/** 行间距 */
+@property(nonatomic,assign) CGFloat rowMargin;
+/** 四周间距 */
+@property(nonatomic,assign) UIEdgeInsets edgeInsets;
+/** scroll距离super的两边的距离 */
+@property(nonatomic,assign) CGFloat scrollPadding;
+/** 头部视图的高度 */
+@property(nonatomic,assign) CGFloat headerHeight;
 @end
 
 @implementation ListClassBtnView
 
-+ (ListClassBtnView *)getListClassBtnViewwWithFrame:(CGRect)frame data:(NSArray *)data chooseBlock:(ChooseClass)chooseBlock{
+- (instancetype)initWithFrame:(CGRect)frame{
     
-    return [[[self class]alloc]initWithFrame:frame data:data chooseBlock:chooseBlock];
-}
-
-- (instancetype)initWithFrame:(CGRect)frame data:(NSArray *)data chooseBlock:(ChooseClass)chooseBlock{
-    
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         self.frame = frame;
-        self.data = data;
-        self.chooseBlock = chooseBlock;
-        [self addSubviews];
     }
     return self;
+}
+
+- (void)setData:(NSArray *)data{
+    
+    _data = data;
+    [self addSubviews];
 }
 
 - (NSMutableArray *)classBtnDicts{
@@ -46,6 +54,66 @@
         _classBtnDicts = [NSMutableArray array];
     }
     return _classBtnDicts;
+}
+
+- (CGFloat)columnMargin{
+    
+    if (!_columnMargin) {
+        if ([self.listClassDelegate respondsToSelector:@selector(columnMarginInListClassBtnView:)]) {
+            _columnMargin = [self.listClassDelegate columnMarginInListClassBtnView:self];
+        }else{
+            _columnMargin = 10;
+        }
+    }
+    return _columnMargin;
+}
+
+- (CGFloat)rowMargin{
+    
+    if (!_rowMargin) {
+        if ([self.listClassDelegate respondsToSelector:@selector(rowMarginInListClassBtnView:)]) {
+            _rowMargin = [self.listClassDelegate rowMarginInListClassBtnView:self];
+        }else{
+            _rowMargin = 10	;
+        }
+    }
+    return _rowMargin;
+}
+
+- (UIEdgeInsets)edgeInsets{
+    
+    
+    if ([self.listClassDelegate respondsToSelector:@selector(edgeInsetsInListClassBtnView:)]) {
+        return [self.listClassDelegate edgeInsetsInListClassBtnView:self];
+    }else{
+        return UIEdgeInsetsMake(0, 10, 10, 10);
+    }
+}
+
+- (CGFloat)scrollPadding{
+    
+    if (!_scrollPadding) {
+        
+        if ([self.listClassDelegate respondsToSelector:@selector(scrollPaddingInListClassBtnView:)]) {
+            _scrollPadding = [self.listClassDelegate scrollPaddingInListClassBtnView:self];
+        }else{
+            _scrollPadding = 70;
+        }
+    }
+    return _scrollPadding;
+}
+
+- (CGFloat)headerHeight{
+    
+    if (!_headerHeight) {
+        
+        if ([self.listClassDelegate respondsToSelector:@selector(headerHeightInListClassBtnView:)]) {
+            _headerHeight = [self.listClassDelegate headerHeightInListClassBtnView:self];
+        }else{
+            _headerHeight = 50;
+        }
+    }
+    return _headerHeight;
 }
 
 - (void)addSubviews{
@@ -65,7 +133,7 @@
     [self addSubview:closeBtn];
     
     CGFloat scrollViewY = SCALE_H(30);
-    UIScrollView *backScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCALE_W(70), scrollViewY, self.frame.size.width-2*SCALE_W(70), CGRectGetMinY(closeBtn.frame)-scrollViewY-KMARGIN)];
+    UIScrollView *backScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(SCALE_W(self.scrollPadding), scrollViewY, self.frame.size.width-2*SCALE_W(self.scrollPadding), CGRectGetMinY(closeBtn.frame)-scrollViewY-self.rowMargin)];
     backScrollView.backgroundColor = [UIColor clearColor];
     backScrollView.showsVerticalScrollIndicator = NO;
     [self addSubview:backScrollView];
@@ -104,14 +172,14 @@
     [headBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [headBtn addTarget:self action:@selector(clickHeadBtn:) forControlEvents:UIControlEventTouchUpInside];
     CGSize nameS = [[dict objectForKey:@"className"] sizeWithAttributes:[NSMutableDictionary dictionaryWithObject:[UIFont systemFontOfSize:TEXTFONT+1] forKey:NSFontAttributeName]];
-    headBtn.frame = CGRectMake(superViewW/2 - nameS.width/2, 0, nameS.width, SCALE_H(HEADBTNHEIGHT));//头部按钮的frame
+    headBtn.frame = CGRectMake(superViewW/2 - nameS.width/2, 0, nameS.width, SCALE_H(self.headerHeight));//头部按钮的frame
     [classView addSubview:headBtn];
     CGFloat lineViewY = CGRectGetMaxY(headBtn.frame)-1;
     
     NSArray *classAtt = [dict objectForKey:@"classAtt"];
     if (classAtt.count) {
-        CGFloat classMaxX = KMARGIN;//左边 边间距
-        CGFloat classBtnY = CGRectGetMaxY(headBtn.frame);
+        CGFloat classMaxX = self.edgeInsets.left;//左边 边间距
+        CGFloat classBtnY = CGRectGetMaxY(headBtn.frame)+self.edgeInsets.top;
         for (NSInteger i = 0; i < classAtt.count; i++) {
             NSDictionary *classDict = classAtt[i];
             [self.classBtnDicts addObject:classDict];
@@ -124,15 +192,15 @@
             [classBtn addTarget:self action:@selector(clickClassBtn:) forControlEvents:UIControlEventTouchUpInside];
             CGFloat classX = classMaxX;
             CGFloat classY = classBtnY;
-            if (classX + nameSize.width >superViewW-KMARGIN) {//右边 边间距
-                classY = classBtnY+nameSize.height+KMARGIN;//行间距
-                classX = KMARGIN;
+            if (classX + nameSize.width >superViewW-self.edgeInsets.right) {//右边 边间距
+                classY = classBtnY+nameSize.height+self.rowMargin;//行间距
+                classX = self.edgeInsets.left;
                 classBtnY = classY;
             }
             classBtn.frame = CGRectMake(classX, classY, nameSize.width, nameSize.height);
             [classView addSubview:classBtn];
-            classMaxX = CGRectGetMaxX(classBtn.frame)+KMARGIN;
-            lineViewY = classBtnY+nameSize.height+KMARGIN-1;
+            classMaxX = CGRectGetMaxX(classBtn.frame)+self.columnMargin;
+            lineViewY = classBtnY+nameSize.height+self.rowMargin-1;
         }
     }
     UIView *lineView = [[UIView alloc]init];
