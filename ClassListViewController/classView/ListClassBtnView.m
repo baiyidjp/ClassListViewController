@@ -104,13 +104,13 @@
     [headBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [headBtn addTarget:self action:@selector(clickHeadBtn:) forControlEvents:UIControlEventTouchUpInside];
     CGSize nameS = [[dict objectForKey:@"className"] sizeWithAttributes:[NSMutableDictionary dictionaryWithObject:[UIFont systemFontOfSize:TEXTFONT+1] forKey:NSFontAttributeName]];
-    headBtn.frame = CGRectMake(superViewW/2 - nameS.width/2, 0, nameS.width, SCALE_H(HEADBTNHEIGHT));
+    headBtn.frame = CGRectMake(superViewW/2 - nameS.width/2, 0, nameS.width, SCALE_H(HEADBTNHEIGHT));//头部按钮的frame
     [classView addSubview:headBtn];
     CGFloat lineViewY = CGRectGetMaxY(headBtn.frame)-1;
     
     NSArray *classAtt = [dict objectForKey:@"classAtt"];
     if (classAtt.count) {
-        CGFloat classMaxX = KMARGIN;
+        CGFloat classMaxX = KMARGIN;//左边 边间距
         CGFloat classBtnY = CGRectGetMaxY(headBtn.frame);
         for (NSInteger i = 0; i < classAtt.count; i++) {
             NSDictionary *classDict = classAtt[i];
@@ -124,8 +124,8 @@
             [classBtn addTarget:self action:@selector(clickClassBtn:) forControlEvents:UIControlEventTouchUpInside];
             CGFloat classX = classMaxX;
             CGFloat classY = classBtnY;
-            if (classX + nameSize.width >superViewW-KMARGIN ) {
-                classY = classBtnY+nameSize.height+KMARGIN;
+            if (classX + nameSize.width >superViewW-KMARGIN) {//右边 边间距
+                classY = classBtnY+nameSize.height+KMARGIN;//行间距
                 classX = KMARGIN;
                 classBtnY = classY;
             }

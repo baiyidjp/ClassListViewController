@@ -15,6 +15,8 @@
 
 @interface ViewController ()
 @property(nonatomic,strong)NSMutableArray *classListArray;
+/** button */
+@property(nonatomic,strong)NSMutableArray *classBtnArray;
 @end
 
 @implementation ViewController
@@ -27,15 +29,30 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-//分类
-- (NSMutableArray *)classListArray{
+- (NSMutableArray *)classBtnArray{
     
-    if (!_classListArray) {
-        _classListArray = [NSMutableArray array];
+    if (!_classBtnArray) {
+        
+        _classBtnArray = [NSMutableArray array];
         for (int i = 0; i<7; i++) {
             NSDictionary *dic = @{@"className":[NSString stringWithFormat:@"大类_%d",i],
                                   @"classId":[NSString stringWithFormat:@"%d",i],
                                   @"classAtt":@[@{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                                  @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                                  },
+                                                @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                                   @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                                   },
                                                 @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
@@ -57,6 +74,15 @@
                                       @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         },
+                                      @{@"className":[NSString stringWithFormat:@"小类leilei_%d%d",i,i],
+                                        @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                        },
+                                      @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                        @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                        },
+                                      @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
+                                        @"classId":[NSString stringWithFormat:@"%d%d",i,i]
+                                        },
                                       @{@"className":[NSString stringWithFormat:@"小类_%d%d",i,i],
                                         @"classId":[NSString stringWithFormat:@"%d%d",i,i]
                                         }
@@ -66,32 +92,45 @@
                 dict[@"className"] = @"全部";
                 dict[@"classAtt"] = @[];
             }
-            [_classListArray addObject:dict];
+            [_classBtnArray addObject:dict];
         }
-//        _classListArray = [ListClassModel mj_objectArrayWithKeyValuesArray:[_classListArray copy]];
+
+    }
+    return _classBtnArray;
+}
+
+//分类
+- (NSMutableArray *)classListArray{
+    
+    if (!_classListArray) {
+        _classListArray = [NSMutableArray array];
+        _classListArray = [ListClassModel mj_objectArrayWithKeyValuesArray:[self.classBtnArray copy]];
     }
     return _classListArray;
 }
 - (IBAction)click:(id)sender {
     
-//    listclassView = [ListClassView getListClassViewWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
-//        [UIView animateWithDuration:0.3 animations:^{
-//            listclassView.y = -KHEIGHT;
-//        } completion:^(BOOL finished) {
-//            listclassView = nil;
-//            [listclassView removeFromSuperview];
-//            //在此处重新请求并刷新数据
-//        }];
-//        NSLog(@"%@",classId);
-//    }];
-//    [UIView animateWithDuration:0.3 animations:^{
-//        listclassView.y = 0;
-//    }];
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//    window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
-//    [window addSubview:listclassView];
+    listclassView = [ListClassView getListClassViewWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
+        [UIView animateWithDuration:0.3 animations:^{
+            listclassView.y = -KHEIGHT;
+        } completion:^(BOOL finished) {
+            listclassView = nil;
+            [listclassView removeFromSuperview];
+            //在此处重新请求并刷新数据
+        }];
+        NSLog(@"%@",classId);
+    }];
+    [UIView animateWithDuration:0.3 animations:^{
+        listclassView.y = 0;
+    }];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
+    [window addSubview:listclassView];
+
+}
+- (IBAction)clickButton:(id)sender {
     
-    listClassBtnView = [ListClassBtnView getListClassBtnViewwWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classListArray chooseBlock:^(NSString *classId) {
+    listClassBtnView = [ListClassBtnView getListClassBtnViewwWithFrame:CGRectMake(0, -KHEIGHT, KWIDTH, KHEIGHT) data:self.classBtnArray chooseBlock:^(NSString *classId) {
         [UIView animateWithDuration:0.3 animations:^{
             listClassBtnView.y = -KHEIGHT;
         } completion:^(BOOL finished) {
@@ -107,7 +146,6 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
     [window addSubview:listClassBtnView];
-
 }
 
 - (void)didReceiveMemoryWarning {

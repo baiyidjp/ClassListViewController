@@ -18,16 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwh-9q-ARX">
-                                <rect key="frame" x="278" y="285" width="45" height="30"/>
-                                <state key="normal" title="点我哦"/>
+                                <rect key="frame" x="243" y="285" width="116" height="30"/>
+                                <state key="normal" title="UICollectionView"/>
                                 <connections>
                                     <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8AK-HM-X1e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUH-hW-i6Y">
+                                <rect key="frame" x="278" y="323" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xZk-Yx-Dnu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pwh-9q-ARX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="We8-Va-3oQ"/>
+                            <constraint firstItem="HUH-hW-i6Y" firstAttribute="top" secondItem="Pwh-9q-ARX" secondAttribute="bottom" constant="8" id="Jik-x6-ja5"/>
+                            <constraint firstItem="HUH-hW-i6Y" firstAttribute="centerX" secondItem="Pwh-9q-ARX" secondAttribute="centerX" id="RKe-wp-G9Z"/>
+                            <constraint firstItem="Pwh-9q-ARX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="We8-Va-3oQ"/>
                             <constraint firstItem="Pwh-9q-ARX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lN5-oF-x2k"/>
                         </constraints>
                     </view>
