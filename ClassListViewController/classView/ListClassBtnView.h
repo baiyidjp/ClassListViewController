@@ -29,15 +29,16 @@ typedef void(^ChooseClass)(NSString *classId);
 - (CGFloat)rowMarginInListClassBtnView:(ListClassBtnView *)ListClassBtnView;
 /** 代理返回四周间距 默认{0,10,10,10} */
 - (UIEdgeInsets)edgeInsetsInListClassBtnView:(ListClassBtnView *)ListClassBtnView;
-/** 代理返回scroll距离两边的距离 内部已经做了比例处理 适配 */
+/** 代理返回scroll距离两边的距离 内部已经做了比例处理 适配 默认70 */
 - (CGFloat)scrollPaddingInListClassBtnView:(ListClassBtnView *)ListClassBtnView;
-/** 代理返回头部视图的高度 内部已经做了比例处理 适配 */
+/** 代理返回头部视图的高度 内部已经做了比例处理 适配 默认50 */
 - (CGFloat)headerHeightInListClassBtnView:(ListClassBtnView *)ListClassBtnView;
 
 @end
 
 @interface ListClassBtnView : UIView
 
+/** 传入的显示的数据 必传 不传出问题自己负责 哈哈 */
 @property(nonatomic,strong)NSArray *data;
 /** chooseBlock */
 @property(nonatomic,copy)void(^chooseBlock)(NSString *classId);
